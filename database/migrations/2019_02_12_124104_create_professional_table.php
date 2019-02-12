@@ -15,27 +15,27 @@ class CreateProfessionalTable extends Migration
     {
         Schema::create('professionals', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome')->nullable($value = true);
-            $table->string('foto');
+            $table->string('nome');
+            $table->string('foto')->nullable($value = true);
             $table->string('cpf')->unique();
-            $table->string('atendimento');
-            $table->string('tipo');
+            $table->string('atendimento')->nullable($value = true);
+            $table->string('tipo')->nullable($value = true);
             $table->string('cnpj');
-            $table->string('especialidade');
-            $table->string('estado');
-            $table->string('cidade');
-            $table->string('bairro');
-            $table->string('logradouro');
-            $table->integer('numero');
-            $table->string('complemento');
-            $table->string('email');
-            $table->string('telefone');
-            $table->string('celular');
-            $table->string('site');
-            $table->string('facebook');
-            $table->string('instagram');
-            $table->string('linkedin');
-            $table->string('twitter');
+            $table->string('especialidade')->nullable($value = true);
+            $table->string('estado')->nullable($value = true);
+            $table->string('cidade')->nullable($value = true);
+            $table->string('bairro')->nullable($value = true);
+            $table->string('logradouro')->nullable($value = true);
+            $table->integer('numero')->nullable($value = true);
+            $table->string('complemento')->nullable($value = true);
+            $table->string('email')->nullable($value = true);
+            $table->string('telefone')->nullable($value = true);
+            $table->string('celular')->nullable($value = true);
+            $table->string('site')->nullable($value = true);
+            $table->string('facebook')->nullable($value = true);
+            $table->string('instagram')->nullable($value = true);
+            $table->string('linkedin')->nullable($value = true);
+            $table->string('twitter')->nullable($value = true);
             $table->timestamps();
         });
     }
