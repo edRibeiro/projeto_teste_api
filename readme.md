@@ -7,6 +7,17 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Start project
+
+1. Crie o arquivo .env;
+2. Crie o banco de dados mais_suade_api;
+3. Altere as configurações de conexão ao banco de dados no arquivo .env;
+4. No terminal navegue até a pasta raiz do projeto;
+5. Execute o comando `php artisan migrate`, para criar as tabelas no banco de dados.
+
+    Extra:
+1. Para popular o banco para realaizar teste execute: `php artisan db:seed`.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:

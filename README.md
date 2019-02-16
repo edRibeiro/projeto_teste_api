@@ -43,3 +43,14 @@ Use these steps to clone from SourceTree, our client for using the repository co
 4. Open the directory you just created to see your repository’s files.
 
 Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+
+## Start project
+
+1. Crie o arquivo .env;
+2. Crie o banco de dados mais_suade_api;
+3. Altere as configurações de conexão ao banco de dados no arquivo .env;
+4. No terminal navegue até a pasta raiz do projeto;
+5. Execute o comando `php artisan migrate`, para criar as tabelas no banco de dados.
+
+Extra:
+1. Para popular o banco para realaizar teste execute: `php artisan db:seed`.
