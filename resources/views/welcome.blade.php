@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel API Mais Saúde
                 </div>
 
                 <div class="links">
