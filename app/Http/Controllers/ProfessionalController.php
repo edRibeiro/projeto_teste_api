@@ -35,7 +35,7 @@ class ProfessionalController extends Controller
      */
     public function create()
     {
-        //
+        return view('professionals.create');
     }
 
     /**
@@ -46,29 +46,31 @@ class ProfessionalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $professional = $this->repository->create($request->all());
+        return redirect('professionals');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Professional  $professional
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Professional $professional)
+    public function show($id)
     {
-        //
+        return view('professionals.show', ['data' => $this->repository->find($id)]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Professional  $professional
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Professional $professional)
+    public function edit($id)
     {
-        //
+        $professional = $this->repository->find($id);
+        return view('professionals.edit', ['data' => $professional]);
     }
 
     /**
@@ -78,9 +80,10 @@ class ProfessionalController extends Controller
      * @param  \App\Professional  $professional
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Professional $professional)
+    public function update(Request $request, $id)
     {
-        //
+        $professional = $this->repository->update($request->all(), $id);
+        return view('professionals.show', ['data' => $professional]);
     }
 
     /**
@@ -89,8 +92,9 @@ class ProfessionalController extends Controller
      * @param  \App\Professional  $professional
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Professional $professional)
+    public function destroy($id)
     {
-        //
+        $this->repository->delete($id);
+        return redirect('professionals');
     }
 }
