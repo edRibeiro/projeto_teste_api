@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Estabelecimentos de Saúde</div>
+                <div class="card-header">Estabelecimentos de Saúde
+                    <a href="{{ url('establishments/create') }}" class="btn btn-primary btn-sm float-right">Novo</a>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))

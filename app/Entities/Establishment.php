@@ -20,6 +20,6 @@ class Establishment extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['NomeFantasia', 'RazaoSocial','CNPJ','Email', 'Telefone'];
 
 }

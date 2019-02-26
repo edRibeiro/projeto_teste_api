@@ -26,12 +26,7 @@
                             <div class="invalid-feedback">{{ $errors->first('email') }}</div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="avatar">Avatar</label>
-                            <input type="file" class="form-control-file{{$errors->has('avatar') ? ' is-invalid':''}}" id="avatar" name="avatar" accept=".jpg, .jpeg, .png .gif">
-                            <div class="invalid-feedback" style="display:inherit">{{ $errors->first('avatar') }}</div>
-                            <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file -->
-                        </div>
+
                     </div>
                     <div class="card-footer text-right">
                         <a href="#" onclick="history.back()" class="btn btn-secondary">Voltar</a>

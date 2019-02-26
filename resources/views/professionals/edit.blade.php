@@ -27,11 +27,6 @@
                             <input type="email" class="form-control{{$errors->has('email') ? ' is-invalid':''}}" value="{{ old('email', $data->email) }}" id="email" name="email" placeholder="email@provedor.com.br">
                             <div class="invalid-feedback">{{ $errors->first('email') }}</div>
                         </div>
-                        <div class="form-group">
-                            <label for="data_nascimento">D. Nascimento</label>
-                            <input type="text" class="form-control{{$errors->has('data_nascimento') ? ' is-invalid':''}}" id="data_nascimento" value="{{ old('data_nascimento', $data->data_nascimento) }}" name="data_nascimento" placeholder="00/00/0000">
-                            <div class="invalid-feedback">{{ $errors->first('data_nascimento') }}</div>
-                        </div>
                     </div>
                     <div class="card-footer text-right">
                         <a href="#" onclick="history.back()" class="btn btn-secondary">Voltar</a>

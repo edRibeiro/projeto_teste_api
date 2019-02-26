@@ -14,6 +14,7 @@ class EstablishmentController extends Controller
 
     public function __construct(EstablishmentRepository $repository)
     {
+        $this->middleware('auth');
         $this->repository = $repository;
     }
     /**
@@ -34,7 +35,7 @@ class EstablishmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('establishments.create');
     }
 
     /**
@@ -45,7 +46,8 @@ class EstablishmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $establishment = $this->repository->create($request->all());
+        return redirect('establishments');
     }
 
     /**
@@ -54,9 +56,9 @@ class EstablishmentController extends Controller
      * @param  \App\Establishment  $establishment
      * @return \Illuminate\Http\Response
      */
-    public function show(Establishment $establishment)
+    public function show($id)
     {
-        //
+        return view('establishments.show', ['data' => $this->repository->find($id)]);
     }
 
     /**
@@ -65,9 +67,10 @@ class EstablishmentController extends Controller
      * @param  \App\Establishment  $establishment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Establishment $establishment)
+    public function edit($id)
     {
-        //
+        $establishment = $this->repository->find($id);
+        return view('establishments.edit', ['data' => $establishment]);
     }
 
     /**
@@ -77,9 +80,10 @@ class EstablishmentController extends Controller
      * @param  \App\Establishment  $establishment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Establishment $establishment)
+    public function update(Request $request, $id)
     {
-        //
+        $establishment = $this->repository->update($request->all(), $id);
+        return view('establishments.show', ['data' => $establishment]);
     }
 
     /**
@@ -88,8 +92,9 @@ class EstablishmentController extends Controller
      * @param  \App\Establishment  $establishment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Establishment $establishment)
+    public function destroy($id)
     {
-        //
+        $this->repository->delete($id);
+        return redirect('establishments');
     }
 }

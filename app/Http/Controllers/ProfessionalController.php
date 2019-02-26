@@ -14,6 +14,7 @@ class ProfessionalController extends Controller
 
     public function __construct(ProfessionalRepository $repository)
     {
+        $this->middleware('auth');
         $this->repository = $repository;
     }
 
