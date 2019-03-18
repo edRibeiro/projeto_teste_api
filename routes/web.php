@@ -20,6 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resources([
-    'professionals' => 'ProfessionalController',
     'establishments' => 'EstablishmentController'
 ]);

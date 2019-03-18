@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 **Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
 
 When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
@@ -54,3 +55,7 @@ Now that you're more familiar with your Bitbucket repository, go ahead and add a
 
 Extra:
 1. Para popular o banco para realaizar teste execute: `php artisan db:seed`.
+=======
+# projeto_teste_api
+Teste de uma API em laravel
+>>>>>>> a7792cf19cecb1c0261851eac313a8f15c5cae5c

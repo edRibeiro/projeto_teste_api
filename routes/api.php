@@ -19,19 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::namespace('Api')->name('api.')->group(function () {
 
-    //Rotas de professionals
-    Route::prefix('professionals')->group(function () {
-
-        Route::get('/', 'ProfessionalController@index')->name('index_professionals');
-        Route::get('/{id}', 'ProfessionalController@show')->name('single_professionals');
-
-        Route::post('/', 'ProfessionalController@store')->name('store_professionals');
-
-        Route::put('/{id}', 'ProfessionalController@update')->name('update_professionals');
-
-        Route::delete('/{id}', 'ProfessionalController@delete')->name('delete_professionals');
-    });
-
     //Rotas de establishments
     Route::prefix('establishments')->group(function(){
 		Route::get('/', 'EstablishmentController@index')->name('index_establishments');

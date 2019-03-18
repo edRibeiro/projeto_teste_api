@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers\Api;
 use App\API\ApiError;
-use App\Establishment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\EstablishmentRepository;
 
 class EstablishmentController extends Controller
 {
     /**
-	 * @var Establishment
+	 * @var EstablishmentRepository
 	 */
-	private $establishment;
-	public function __construct(Establishment $establishment)
-	{
-		$this->establishment = $establishment;
-	}
+	protected $repository;
+	public function __construct(EstablishmentRepository $repository)
+    {
+        $this->repository = $repository;
+    }
 	public function index()
     {
-    	return response()->json($this->establishment->paginate(10));
+    	return response()->json($this->repository->all());
     }
     public function show($id)
     {
-    	$establishment = $this->establishment->find($id);
+    	$establishment = $this->repository->find($id);
     	if(! $establishment) return response()->json(ApiError::errorMessage('Establishment não encontrado!', 4040), 404);
     	$data = ['data' => $establishment];
 	    return response()->json($data);
@@ -30,8 +30,8 @@ class EstablishmentController extends Controller
     public function store(Request $request)
     {
 		try {
-			$professionalData = $request->all();
-			$this->establishment->create($professionalData);
+			$establishmentData = $request->all();
+			$this->repository->create($establishmentData);
 			$return = ['data' => ['msg' => 'Establishment criado com sucesso!']];
 			return response()->json($return, 201);
 		} catch (\Exception $e) {
@@ -44,9 +44,9 @@ class EstablishmentController extends Controller
 	public function update(Request $request, $id)
 	{
 		try {
-			$professionalData = $request->all();
-			$establishment     = $this->establishment->find($id);
-			$establishment->update($professionalData);
+			$establishmentData = $request->all();
+			$establishment     = $this->repository->find($id);
+			$establishment->update($establishmentData);
 			$return = ['data' => ['msg' => 'Establishment atualizado com sucesso!']];
 			return response()->json($return, 201);
 		} catch (\Exception $e) {

@@ -36,9 +36,7 @@
                     <ul class="navbar-nav mr-auto">
                             @guest
                             @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('professionals') }}">Profissionais <span class="sr-only">(current)</span></a>
-                            </li>
+
                             <li class="nav-item">
                                     <a class="nav-link" href="{{ url('establishments') }}">Estabelecimentos de Saúde <span class="sr-only">(current)</span></a>
                                 </li>

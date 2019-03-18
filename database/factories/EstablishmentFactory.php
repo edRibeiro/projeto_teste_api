@@ -7,6 +7,8 @@ $factory->define(\App\Establishment::class, function (Faker $faker) {
     return [
         'NomeFantasia' => $faker->company,
         'RazaoSocial' => $faker->company,
-        'CNPJ' => $faker->cnpj
+        'CNPJ' => $faker->cnpj,
+        'Email' => $faker->companyEmail,
+        'Telefone' => $faker->phoneNumber
     ];
 });
